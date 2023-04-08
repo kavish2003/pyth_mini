@@ -1,0 +1,24 @@
+use blood;
+
+create table blood_info(
+DONOR_ID int auto_increment primary key,
+FULLNAME VARCHAR(80),
+AGE INT,
+GENDER VARCHAR(10),
+PHONE BIGINT,
+BLOODGROUP VARCHAR(10),
+USERNAME VARCHAR(80),
+PWD VARCHAR(80),
+WEIGHT INT,
+DISEASE VARCHAR(80),
+EXPIRY_DATE DATE
+
+);
+
+select * from blood_info;
+truncate table blood_info
+
+INSERT INTO blood_info(fullname,age,gender,phone,bloodgroup,username,pwd,weight,disease,expiry_date) VALUES ('KAVISH', 19, 'Male', 9022231306, 'O+', 'kavish', SHA('lol'), 50, 'Low haemoglobin', TO_DATE('2023/04/02', 'yyyy/mm/dd'));
+INSERT INTO blood_info(fullname,age,gender,phone,bloodgroup,username,pwd,weight,disease,expiry_date) VALUES ('KAVISH', 19, 'Male', 9022231306, 'O+', 'kavish', SHA1('lol'), 50, 'Low haemoglobin', STR_TO_DATE('2023-04-02', '%Y-%m-%d'));
+
+drop table blood_info;
